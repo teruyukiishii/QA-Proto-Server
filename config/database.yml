@@ -14,19 +14,21 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
+  password: <%= ENV.fetch("DATABASE_PASSWORD") %> 
   socket: /tmp/mysql.sock
 
 development:
   <<: *default
-  database: QA-Proto-Server_development
+  database: qa_proto
+  usersname: root
+  password: <%= ENV.fetch("DATABASE_PASSWORD") %> 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: QA-Proto-Server_test
+#test:
+#  <<: *default
+#  database: QA-Proto-Server_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +51,7 @@ test:
 #
 production:
   <<: *default
-  database: QA-Proto-Server_production
-  username: QA-Proto-Server
-  password: <%= ENV['QA-PROTO-SERVER_DATABASE_PASSWORD'] %>
+  host: us-cdbr-iron-east-05.cleardb.net
+  database: heroku_d8329eff41a9f56 
+  username: bc3fbe83318e95 
+  password: <%= ENV['DATABASE_PASSWORD'] %>
