@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Question.delete_all()
+Question.create(:content => '質問です')
+Question.create(:content => 'もう一回質問します')
+Question.create(:content => 'さらに質問します')
