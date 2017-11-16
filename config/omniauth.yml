@@ -1,0 +1,10 @@
+production: &production
+  facebook:
+    key: 1276730552432044 
+    secret: a2b962f7a95393300d375feca7cc1054 
+
+development: &development
+  <<: *production
+
+test:
+  <<: *development
