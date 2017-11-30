@@ -15,6 +15,7 @@
             Cordova / PhoneGap)
       */
 
+<<<<<<< HEAD
       var data = <%= @resource.to_json(only: 'name').html_safe %>;
 
       window.addEventListener("message", function(ev) {
@@ -23,6 +24,13 @@
             type: 'login',
             data: data
           }, '*');
+=======
+      var data = <%= @resource.to_json.html_safe %>;
+
+      window.addEventListener("message", function(ev) {
+        if (ev.data === "requestCredentials") {
+          ev.source.postMessage(data, '*');
+>>>>>>> 5de43b702b394fc80666fcee55e4612662c56ef2
           window.close();
         }
       });
