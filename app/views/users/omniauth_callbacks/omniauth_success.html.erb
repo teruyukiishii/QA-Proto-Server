@@ -15,11 +15,14 @@
             Cordova / PhoneGap)
       */
 
-      var data = <%= @resource.to_json.html_safe %>;
+      var data = <%= @resource.to_json(only: 'name').html_safe %>;
 
       window.addEventListener("message", function(ev) {
         if (ev.data === "requestCredentials") {
-          ev.source.postMessage(data, '*');
+          ev.source.postMessage({
+            type: 'login',
+            data: data
+          }, '*');
           window.close();
         }
       });

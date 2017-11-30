@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
+  include DeviseTokenAuth::Concerns::SetUserByToken
   before_action :set_question, only: [:show, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /questions
   def index
