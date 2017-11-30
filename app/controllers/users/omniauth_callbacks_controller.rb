@@ -25,9 +25,6 @@ module Users
         render json: { message: "failed to login" }, status: 500
       end
 
-      cookies.permanent[:"access-token"] = @auth_params[:auth_token]
-      cookies.permanent[:client] = @auth_params[:client_id]
-      cookies.permanent[:uid] = @auth_params[:uid]
       # これをそのままつかうと304になるので一旦コメントアウト
       #render_data_or_redirect('deliverCredentials', @auth_params.as_json, @resource.as_json)
     end

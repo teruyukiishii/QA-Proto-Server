@@ -15,7 +15,7 @@
             Cordova / PhoneGap)
       */
 
-      var data = <%= @resource.to_json(only: 'name').html_safe %>;
+      var data = <%= @resource.as_json(only: 'name').merge(@auth_params.as_json).to_json.html_safe %>;
 
       window.addEventListener("message", function(ev) {
         if (ev.data === "requestCredentials") {
