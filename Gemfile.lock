@@ -97,6 +97,8 @@ GEM
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    omniauth-stripe (0.1.0)
+      omniauth-oauth2
     orm_adapter (0.5.0)
     puma (3.10.0)
     rack (2.0.3)
@@ -173,6 +175,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-oauth2
+  omniauth-stripe
   puma (~> 3.7)
   rack-cors
   rails (~> 5.1.4)

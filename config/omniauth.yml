@@ -2,6 +2,9 @@ production: &production
   facebook:
     key: 1276730552432044 
     secret: a2b962f7a95393300d375feca7cc1054 
+  stripe:
+    key: ca_BuaqbvhFMsWmCzJNjr7cPQG4jToxKhMW
+    secret: sk_test_oHydl5SFZ59slreH13LIScVk 
 
 development: &development
   <<: *production
